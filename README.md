@@ -8,14 +8,14 @@
 
 This is a repository for calculating the Fisher-Rao Distance between densities and performing hypothesis testing.
 
-## Overview
+# Overview
 The key advantages of using the Fisher-Rao Distance for comparing sets of data are that it can be used:
  * parametrically or non-parametrically
  * for scalar or multi-dimensional data
  * in various domains (i.e.  **R<sup>n</sup>** or **S<sup>n</sup>**  ) by changing the form of the density
 
 
-### Basic Function Usage
+## Framework Usage Example
 For this example we generate and compare three data sets generated from a Normal Distribution in **R<sup>10</sup>** and mapped to **R**.
 
 
@@ -25,7 +25,7 @@ using KernelDensityEstimatePlotting #currently not working in Atom; needs Atom d
 
 ```
 The density estimation requires sets of points.  These points can either be the original data or can be the result of some sort of dimension reduction.  This example calculates pairwise distances and uses those in a classicalMDS setting
-### Generate the Points and Perform Dimension Reduction
+#### Generate the Points and Perform Dimension Reduction
 ```#note that the Fisher-Rao distance does not require the sets to have the same number of points.
 points1 = randn(10, 500)
 points2 = randn(10, 500)
@@ -37,7 +37,7 @@ points3 = randn(10, 500) + ones(1, 500) * 1.5
 Points = [points1, points2, points3]
 lowdimpoints = get_low_dim_points(Points, 1)
 ```
-### Estimate the Densities
+#### Estimate the Densities
 ```
 pdf1 = kde!(lowdimpoints[:,:,1])
 pdf2 = kde!(lowdimpoints[:,:,2])
@@ -46,7 +46,7 @@ pdf3 = kde!(lowdimpoints[:,:,3])
 #plot pane is not currently working in Atom-- waiting for Atom dev fix
 plot([pdf1; pdf2; pdf3], c = ["red"; "green"; "blue"])
 ```
-### Estimate the Fisher-Rao Distances
+#### Estimate the Fisher-Rao Distances
 ```
 dfr1_2 = fisherraodistance(
     pdf1,
@@ -67,7 +67,7 @@ dfr1_3 = fisherraodistance(
 returns: 0.495
 
 
-### Estimate the Fisher-Rao p-values
+#### Estimate the Fisher-Rao p-values
 ```
 p1_2 = fisherraotest(pdf1, pdf2, n1, n2, dfr1_2)
 ```
@@ -76,5 +76,6 @@ returns: 0.62
 p1_3 = fisherraotest(pdf1, pdf3, n1, n3, dfr1_3)
 ```
  returns: 0.00
-
-<img src ="images/DoesItWork.png" width="500" class="center"/>
+<p align="center">
+<img src ="images/DoesItWork.png" width="500" />
+</p>

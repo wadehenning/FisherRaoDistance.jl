@@ -10,6 +10,7 @@ export
     calc_vec_dist,
     fisherraodistance,
     fisherraotest,
+    transform, #from MultivariateStats
     kde! #from package KernelDensityEstimate
 
 

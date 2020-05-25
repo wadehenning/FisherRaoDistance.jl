@@ -12,11 +12,11 @@ This is a repository for calculating the Fisher-Rao Distance between densities a
 The key advantages of using the Fisher-Rao Distance for comparing sets of data are that it can be used:
  * parametrically or non-parametrically
  * for scalar or multi-dimensional data
- * in various domains (i.e.  **R<sup>n</sup>** or **S<sup>n</sup>**  ) by simply changing the form of the density
+ * in various domains (i.e.  **R<sup>n</sup>** or **S<sup>n</sup>**  ) by changing the form of the density
 
 
 ### Basic Function Usage
-For this example we simply generate and compare three data sets generated from a Normal Distribution in **R<sup>10</sup>** and mapped to **R**.
+For this example we generate and compare three data sets generated from a Normal Distribution in **R<sup>10</sup>** and mapped to **R**.
 
 
 ```
@@ -32,7 +32,7 @@ points2 = randn(10, 500)
 points3 = randn(10, 500) + ones(1, 500) * 1.5
 
 
-#below simply calculates the pairwise Euclidean distance matrix between the points
+#below calculates the pairwise Euclidean distance matrix between the points
 #and uses those for classical mds
 Points = [points1, points2, points3]
 lowdimpoints = get_low_dim_points(Points, 1)
@@ -55,7 +55,7 @@ dfr1_2 = fisherraodistance(
     lowdimpoints[:, :, 2],
 )
 ```
-returns: 0.495
+returns: 0.089
 ```
 dfr1_3 = fisherraodistance(
     pdf1,

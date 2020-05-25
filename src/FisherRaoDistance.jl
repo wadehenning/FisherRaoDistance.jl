@@ -1,4 +1,5 @@
 module FisherRaoDistance
+
 using KernelDensityEstimate
 using MultivariateStats
 using StatsBase

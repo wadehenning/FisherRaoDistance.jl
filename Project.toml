@@ -3,6 +3,11 @@ uuid = "005e02dc-18de-42fd-a5d5-8f97abd016c9"
 authors = ["Wade Henning", "Adaptym"]
 version = "0.1.0"
 
+[deps]
+KernelDensityEstimate = "2472808a-b354-52ea-a80e-1658a3c6056d"
+MultivariateStats = "6f286f6a-111f-5878-ab1e-185364afe411"
+StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
+
 [compat]
 julia = "1"
 

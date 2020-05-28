@@ -90,3 +90,9 @@ p1_3 = fisherraotest(pdf1, pdf3, n1, n3, dfr1_3)
  sample_points, ind = sample(pdf,100) #sample 100 points from the pdf
 
  ```
+## References
+Wade Henning. "A Framework for Comparing Shape Distributions", 2014, Ph.D. Thesis, Florida State University.
+
+Wade Henning, Anuj Srivastava. "A Two-Sample Test for Statistical Comparisons of Shape Populations", 2016, IEEE Winter Conference on Applications in Computer Vision
+
+Anuj Srivastava, Ian Jermyn, Shantanu Joshi. "Riemannian analysis of probability density functions with applications in Vision", 2007, IEEE Computer Vision and Pattern Recognition

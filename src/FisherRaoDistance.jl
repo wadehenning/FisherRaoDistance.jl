@@ -11,7 +11,10 @@ export
     fisherraodistance,
     fisherraotest,
     transform, #from MultivariateStats
-    kde! #from package KernelDensityEstimate
+    kde!, #from package KernelDensityEstimate
+    evaluateDualTree,
+    sample
+
 
 
 # source files

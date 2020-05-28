@@ -9,13 +9,15 @@
 This is a repository for calculating the Fisher-Rao Distance between densities and performing hypothesis testing.
 
 # Overview
-The key advantages of using the Fisher-Rao Distance for comparing sets of data are that it can be used:
+In addition to the fact that the Fisher-Rao Distance is a proper distace metric, key advantages of using the Fisher-Rao Distance for comparing sets of data are that it can be used:
  * parametrically or non-parametrically
  * for scalar or multi-dimensional data
  * in various domains (i.e.  **R<sup>n</sup>** or **S<sup>n</sup>**  ) by changing the form of the density
 
+ In this current implementation, we use a nonparametric Gaussian KDE and LOOCV for calculating its bandwidth parameter.
 
-## Framework Usage Example
+
+## Example 1: Framework Usage
 For this example we generate and compare three data sets generated from a Normal Distribution in **R<sup>10</sup>** and mapped to **R**.
 
 
@@ -46,6 +48,9 @@ pdf3 = kde!(lowdimpoints[:,:,3])
 #plot pane is not currently working in Atom-- waiting for Atom dev fix
 plot([pdf1; pdf2; pdf3], c = ["red"; "green"; "blue"])
 ```
+<p align="center">
+<img src ="images/DoesItWork.png" width="500" />
+</p>
 #### Estimate the Fisher-Rao Distances
 ```
 dfr1_2 = fisherraodistance(
@@ -76,6 +81,12 @@ returns: 0.62
 p1_3 = fisherraotest(pdf1, pdf3, n1, n3, dfr1_3)
 ```
  returns: 0.00
-<p align="center">
-<img src ="images/DoesItWork.png" width="500" />
-</p>
+
+## Example 2: Basic Function Usage from KernelDensityEstimate.jl
+ ```
+ data = rand(100) #generate some random data
+ pdf = kde!(data) #estimate a pdf from given data
+ data_likelihoods = evaluateDualTree(pdf,data) #get data likelihoods
+ sample_points, ind = sample(pdf,100) #sample 100 points from the pdf
+
+ ```

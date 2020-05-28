@@ -96,4 +96,6 @@ Wade Henning. "A Framework for Comparing Shape Distributions", 2014, Ph.D. Thesi
 
 Wade Henning, Anuj Srivastava. "A Two-Sample Test for Statistical Comparisons of Shape Populations", 2016, IEEE Winter Conference on Applications in Computer Vision
 
-Anuj Srivastava, Ian Jermyn, Shantanu Joshi. "Riemannian analysis of probability density functions with applications in Vision", 2007, IEEE Computer Vision and Pattern Recognition
+Anuj Srivastava, Ian Jermyn, Shantanu Joshi. "Riemannian analysis of probability density functions with applications in vision", 2007, IEEE Computer Vision and Pattern Recognition
+
+Erik B. Sudderth, Alexander Ihler, et al. "Nonparametric belief propagation.", 2010, Communications of the ACM

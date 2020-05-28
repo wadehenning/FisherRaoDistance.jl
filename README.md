@@ -51,6 +51,7 @@ plot([pdf1; pdf2; pdf3], c = ["red"; "green"; "blue"])
 <p align="center">
 <img src ="images/DoesItWork.png" width="500" />
 </p>
+
 #### Estimate the Fisher-Rao Distances
 ```
 dfr1_2 = fisherraodistance(
